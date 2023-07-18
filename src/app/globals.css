@@ -29,3 +29,7 @@ body {
 p {
   @apply px-2 text-sm;
 }
+
+.container {
+  @apply px-10;
+}

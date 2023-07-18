@@ -4,7 +4,7 @@ import PSLImage from '@public/ParitySupportedLiving.png';
 
 const Home = () => {
   return (
-    <div className={`flex min-h-screen flex-col items-center justify-between`} >
+    <div className={`min-h-screen flex flex-col justify-between items-center`} >
       <nav className={`bg-psl-secondary/80 sm:flex sm:items-center sm:justify-around w-full min-h-5 px-5 py-2`}>
         <div className={`flex items-center p-1 sm:p-0`}>
           <span className="material-icons text-sm">
@@ -19,8 +19,39 @@ const Home = () => {
           <p>contact@paritysl.com</p>
         </div>
       </nav>
-      <h1>Home</h1>
-      <h2>Test</h2>
+      <main className='w-full flex flex-col items-center justify-between flex-1'>
+        <section className='w-full' style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1687255925808-b72d686d4762?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80)',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover'
+        }}>
+          <div className='bg-psl-primary/60 w-full flex justify-center'>
+            <div className={`container flex items-center justify-around py-40 `}>
+              <div className='container w-1/2'>
+                <h1 className='text-5xl text-psl-active-link py-5'>Parity Supported Living</h1>
+                <p className='text-2xl border-l-4 border-solid border-l-psl-active-link pl-4'>At Parity, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
+              </div>
+              <div className='container w-1/2'>
+                <form className='flex flex-col items-center'>
+                  <h2 className='text-4xl text-psl-active-link py-4'>Enquire Now</h2>
+                  <div className='grid grid-cols-2'>
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                    <div className='col-span-2 flex items-center justify-center'>
+                      <input></input>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div>Test</div>
+        <div>Test2</div>
+      </main>
       <footer className={`bg-psl-secondary/80 flex flex-col justify-around w-full p-4 sm:px-10`}>
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 p-3`}>
           <div className={`col-span-1 w-full md:w-1/2 m-auto`}>
