@@ -7,13 +7,13 @@ const Home = () => {
     <div className={`flex min-h-screen flex-col items-center justify-between`} >
       <nav className={`bg-psl-secondary/80 sm:flex sm:items-center sm:justify-around w-full min-h-5 px-5 py-2`}>
         <div className={`flex items-center p-1 sm:p-0`}>
-          <span className="material-icons">
+          <span className="material-icons text-sm">
             call
           </span>
           <p>0427 358 514</p>
         </div>
         <div className={`flex items-center p-1 sm:p-0`}>
-          <span className="material-icons">
+          <span className="material-icons text-sm">
             email
           </span>
           <p>contact@paritysl.com</p>
@@ -35,19 +35,19 @@ const Home = () => {
             <p>CONTACT DETAILS</p>
             <ul>
               <li className={`flex p-2 items-center`}>
-                <span className={`material-icons p-2 rounded-full bg-psl-active-link`}>
+                <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link`}>
                   call
                 </span>
                 <p >0427 358 514</p>
               </li>
               <li className={`flex p-2 items-center`}>
-                <span className={`material-icons p-2 rounded-full bg-psl-active-link`}>
+                <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link`}>
                   email
                 </span>
                 <p >contact@paritysl.com</p>
               </li>
               <li className={`flex p-2 items-center`}>
-                <span className={`material-icons p-2 rounded-full bg-psl-active-link`}>
+                <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link`}>
                   location_pin
                 </span>
                 <p >Unit 4/116 Mitchell Avenue,
