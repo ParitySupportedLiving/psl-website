@@ -1,8 +1,14 @@
-import React from 'react';
+'use client';
+
+import React, { forwardRef, useRef } from 'react';
 import Image from 'next/image';
 import PSLImage from '@public/ParitySupportedLiving.png';
 
 const Home = () => {
+
+  const childRef = useRef(null);
+
+
   return (
     <div className={`min-h-screen flex flex-col justify-between items-center`} >
       <nav className={`bg-psl-secondary/80 sm:flex sm:items-center sm:justify-around w-full min-h-5 px-5 py-2`}>
@@ -19,27 +25,69 @@ const Home = () => {
           <p>contact@paritysl.com</p>
         </div>
       </nav>
-      <main className='w-full flex flex-col items-center justify-between flex-1'>
+      <main className='w-full min-w-full flex flex-col items-center justify-around flex-1'>
         <section className='w-full' style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1687255925808-b72d686d4762?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80)',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          boxSizing: 'border-box'
         }}>
-          <div className='bg-psl-primary/60 w-full flex justify-center'>
-            <div className={`container flex items-center justify-around py-40 `}>
-              <div className='container w-1/2'>
+          <div className='bg-psl-primary/60 flex flex-col items-center'>
+            <div className={`w-full inline-flex items-center justify-between py-40 px-4 flex-wrap`}>
+              <div className='w-full md:w-1/2 p-2'>
                 <h1 className='text-5xl text-psl-active-link py-5'>Parity Supported Living</h1>
                 <p className='text-2xl border-l-4 border-solid border-l-psl-active-link pl-4'>At Parity, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
               </div>
-              <div className='container w-1/2'>
+              <div className='w-full md:w-1/2 p-2'>
                 <form className='flex flex-col items-center'>
                   <h2 className='text-4xl text-psl-active-link py-4'>Enquire Now</h2>
+                  {console.log(childRef)}
                   <div className='grid grid-cols-2'>
-                    <input></input>
-                    <input></input>
-                    <input></input>
-                    <input></input>
+                    <div className='px-1 mb-2'>
+                      <label htmlFor='top-form-name' className='hidden'>Name</label>
+                      <input
+                        name="top-form-name"
+                        id="top-form-name"
+                        placeholder='Name'
+                        required
+                        aria-required={true}
+                        className={`input-base `}
+                      ></input>
+                    </div>
+                    <div className='px-1 mb-2'>
+                      <label htmlFor='top-form-number' className='hidden'>Phone Number</label>
+                      <input
+                        name="top-form-number"
+                        id="top-form-number"
+                        placeholder='Phone Number'
+                        required
+                        aria-required={true}
+                        className={`input-base `}
+                      ></input>
+                    </div>
+                    <div className='px-1 mb-2'>
+                      <label htmlFor='top-form-email' className='hidden'>Email</label>
+                      <input
+                        name="top-form-email"
+                        id="top-form-email"
+                        placeholder='Email'
+                        required
+                        aria-required={true}
+                        className={`input-base `}
+                      ></input>
+                    </div>
+                    <div className='px-1 mb-2'>
+                      <label htmlFor='top-form-message' className='hidden'>Message</label>
+                      <input
+                        name="top-form-message"
+                        id="top-form-message"
+                        placeholder='Message'
+                        required
+                        aria-required={true}
+                        className={`input-base`}
+                      ></input>
+                    </div>
                     <div className='col-span-2 flex items-center justify-center'>
                       <input></input>
                     </div>

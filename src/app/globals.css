@@ -30,6 +30,15 @@ p {
   @apply px-2 text-sm;
 }
 
-.container {
-  @apply px-10;
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(1, 1, 0, 0.7);
+}
+
+:focus-visible {
+  outline: none;
+}
+
+.input-base {
+  @apply w-full rounded-md px-5 py-4 border-solid border-psl-secondary-text border-2 focus:border-psl-active-link focus:border-2 focus:border-solid;
 }
