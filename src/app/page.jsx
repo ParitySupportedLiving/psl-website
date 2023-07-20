@@ -24,20 +24,14 @@ const Home = () => {
         </div>
       </nav>
       <main className='w-full min-w-full flex flex-col items-center justify-around flex-1'>
-        <section className='w-full' style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1687255925808-b72d686d4762?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80)',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          boxSizing: 'border-box'
-        }}>
+        <section className='w-full section1'>
           <div className='bg-psl-primary/60 w-full inline-flex items-center justify-around py-40 px-4 flex-wrap'>
             <div name="intro-message" className='w-full md:w-1/2 lg:w-1/3 p-2 rightToLeft'>
-              <h1 className='text-5xl text-psl-active-link py-5'>Parity Supported Living</h1>
-              <p className='text-2xl border-l-4 border-solid border-l-psl-active-link pl-4'>At Parity, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
+              <h1 className='text-5xl text-psl-active-link py-5 font-bold'>Parity Supported Living</h1>
+              <p className='text-2xl border-l-4 border-solid border-l-psl-active-link pl-5'>At Parity, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
             </div>
             <div name="quick-access-form" className={`w-full md:w-1/2 lg:w-1/3 p-2 flex flex-col items-center leftToRight`}>
-              <h2 className='text-4xl text-psl-active-link py-4'>Enquire Now</h2>
+              <h2 className='text-4xl text-psl-active-link py-4 font-semibold'>Enquire Now</h2>
               <TopForm />
               <div className=' w-full flex flex-wrap justify-start sm:justify-around p-2'>
                 <div className='flex items-center pb-2 sm:pb-0'>
