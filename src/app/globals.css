@@ -16,6 +16,36 @@
   }
 }
 
+@keyframes leftToRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-0);
+    opacity: 100%;
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-0);
+    opacity: 100%;
+  }
+}
+
+.leftToRight {
+  animation: 1s ease-in-out 0s 1 leftToRight;
+}
+
+.rightToLeft {
+  animation: 1s ease-in-out 0s 1 rightToLeft;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -40,5 +70,5 @@ p {
 }
 
 .input-base {
-  @apply w-full rounded-md px-5 py-4 border-solid border-psl-secondary-text border-2 focus:border-psl-active-link focus:border-2 focus:border-solid;
+  @apply w-full rounded-md px-5 py-4 border-solid border-psl-secondary-text border-2 focus:border-psl-active-link focus:border-2 focus:border-solid text-psl-primary;
 }
