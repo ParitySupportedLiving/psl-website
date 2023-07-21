@@ -1,8 +1,30 @@
-import React from 'react';
+'use client';
 
-const Button = ({ className, type, children }) => {
+import React, { useEffect } from 'react';
+
+const Button = ({ className, type, children, ...props }) => {
+
+  useEffect(() => {
+    if (props.onVisible) {
+      const inViewport = (entries, observer) => {
+        entries.forEach(entry => {
+          entry.isIntersecting && entry.target.classList.add("is-inViewport");
+        });
+      };
+
+      const observer = new IntersectionObserver(inViewport);
+      const observerOptions = {};
+
+      const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
+      ELs_inViewport.forEach(EL => {
+        observer.observe(EL, observerOptions);
+      });
+    }
+  }, [props.onVisible]);
+
+
   return (
-    <button className={className} type={type}>{children}</button>
+    <button className={className} type={type} data-inviewport={props?.onVisible}>{children}</button>
   );
 };
 

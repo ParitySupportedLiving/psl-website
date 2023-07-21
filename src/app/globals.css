@@ -57,9 +57,20 @@
   animation: 1s ease-in-out 0s 1 rightToLeft;
 }
 
-.is-visible {
-  animation: 1s ease-in-out 0s 1 growFromCenter;
+[data-inviewport="fadeIn"] {
+  transition: 1s;
+  transform: scale(0);
+  opacity: 0;
 }
+
+[data-inviewport="fadeIn"].is-inViewport {
+  transform: scale(100%);
+  opacity: 100%;
+}
+
+/* .fadeIn {
+  animation: 1s ease-in-out 0s 1 growFromCenter;
+} */
 
 body {
   color: rgb(var(--foreground-rgb));

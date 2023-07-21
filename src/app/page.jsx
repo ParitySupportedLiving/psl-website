@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import PSLImage from '@public/ParitySupportedLiving.png';
-import Button from '@/components/Button/Button';
-import TopForm from '@/components/TopForm/TopForm';
+import Button from '@component/Button/Button';
+import TopForm from '@component/TopForm/TopForm';
 
 const Home = () => {
 
@@ -25,11 +25,11 @@ const Home = () => {
       <main className='w-full min-w-full flex flex-col items-center justify-around flex-1'>
         <section name="section1" className='w-full section1'>
           <div className='bg-psl-primary/60 w-full inline-flex items-center justify-around py-40 px-4 flex-wrap'>
-            <div name="intro-message" className='w-full md:w-1/2 lg:w-1/3 p-2 rightToLeft'>
+            <div name="intro-message" className='w-full md:w-1/2 xl:w-1/3 p-2 rightToLeft'>
               <h1 className='text-5xl text-psl-active-link py-5 font-bold'>Parity Supported Living</h1>
               <p className='text-2xl border-l-4 border-solid border-l-psl-active-link pl-5'>At Parity, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
             </div>
-            <div name="quick-access-form" className={`w-full md:w-1/2 lg:w-1/3 p-2 flex flex-col items-center leftToRight`}>
+            <div name="quick-access-form" className={`w-full md:w-1/2 xl:w-1/3 p-2 flex flex-col items-center leftToRight`}>
               <h2 className='text-4xl text-psl-active-link py-4 font-semibold'>Enquire Now</h2>
               <TopForm />
             </div>
@@ -49,7 +49,7 @@ const Home = () => {
               <h2 className='text-4xl text-psl-primary font-semibold'>Parity Supported Living</h2>
               <div className='border-b-2 border-solid border-psl-active-link my-3 w-1/5'></div>
               <p className='text-psl-primary'>Parity Supported Living was founded by people that have worked in the disability support industry for many years. We are a Hunter Valley based business, driven to help participants gain access to the NDIS. Parity assists clients to reach the goals within their plans through community access and guidance from our team.</p>
-              <button className='bg-psl-active-link rounded-xl py-4 px-8 mt-10 font-semibold is-visible'>Call 0427 358 514 </button>
+              <Button className='bg-psl-active-link rounded-xl py-4 px-8 mt-10 font-semibold' onVisible='fadeIn'>Call 0427 358 514 </Button>
             </div>
           </div>
         </section>
