@@ -85,6 +85,26 @@ const TopForm = () => {
           <Button className={`w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold`} type="submit">Submit</Button>
         </div>
       </div>
+      <div className=' w-full flex flex-wrap justify-between p-2'>
+        <div className='flex items-center pb-2 '>
+          <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link`}>
+            email
+          </span>
+          <div>
+            <p>Email Us</p>
+            <p >contact@paritysl.com</p>
+          </div>
+        </div>
+        <div className='flex items-center'>
+          <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link`}>
+            call
+          </span>
+          <div>
+            <p>Call Us</p>
+            <p >0427 358 514</p>
+          </div>
+        </div>
+      </div>
     </form>
   );
 };
