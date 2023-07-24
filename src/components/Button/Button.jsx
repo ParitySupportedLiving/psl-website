@@ -8,23 +8,25 @@ const Button = ({ className, type, children, ...props }) => {
     if (props.onVisible) {
       const inViewport = (entries, observer) => {
         entries.forEach(entry => {
-          entry.isIntersecting && entry.target.classList.add("is-inViewport");
+          if (entry.target.id === 'button' && entry.isIntersecting) {
+            entry.target.classList.add("is-inViewport");
+          }
         });
       };
 
-      const observer = new IntersectionObserver(inViewport);
       const observerOptions = {};
+      const observer = new IntersectionObserver(inViewport, observerOptions);
 
       const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
       ELs_inViewport.forEach(EL => {
-        observer.observe(EL, observerOptions);
+        observer.observe(EL);
       });
     }
   }, [props.onVisible]);
 
 
   return (
-    <button className={className} type={type} data-inviewport={props?.onVisible}>{children}</button>
+    <button id="button" className={className} type={type} data-inviewport={props?.onVisible}>{children}</button>
   );
 };
 
