@@ -24,8 +24,8 @@ const DynamicCard = dynamic(() => import('@component/Card/Card'), {
 });
 
 
-
 const Home = () => {
+
 
   return (
     <div className={`min-h-screen flex flex-col justify-between items-center`} >
@@ -177,6 +177,16 @@ const Home = () => {
           <div className={`w-full lg:w-1/2 `}>
             <BottomForm />
           </div>
+        </section>
+        <section name="section5" className='w-full'>
+          <iframe
+            height="450"
+            className={`border-0 w-full`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:EjM0LzExNiBNaXRjaGVsbCBBdmUsIEt1cnJpIEt1cnJpIE5TVyAyMzI3LCBBdXN0cmFsaWEiNxo1CjASLgoUChIJHY5OL9c3c2sR2azzyOOgXOcQdCoUChIJ1xqBvNE3c2sR5S1dZpdvNWcSATQ&key=AIzaSyBl_mcqBghSelYuOnhagHHx0OZoUTZ5XtU"
+            title="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."
+            aria-label="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."></iframe>
         </section>
       </main>
       <footer className={`bg-psl-secondary/80 flex flex-col justify-around w-full p-4 sm:px-10`}>
