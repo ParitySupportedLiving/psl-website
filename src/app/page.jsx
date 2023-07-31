@@ -1,6 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import PSLImage from '@public/ParitySupportedLiving.png';
+import pslAbout from '@public/psl-about-us.jpg';
+import pslCommunity from '@public/psl-community.jpg';
+import pslCoordination from '@public/psl-coordination.jpg';
+import pslGroup from '@public/psl-group.jpg';
+import pslSil from '@public/psl-sil.jpg';
 // import Button from '@component/Button/Button';
 // import TopForm from '@component/TopForm/TopForm';
 // import Card from '@/components/Card/Card';
@@ -58,8 +63,8 @@ const Home = () => {
         </section>
         <section name="section2" className={`w-full bg-psl-active-text dark:bg-psl-primary flex items-center justify-evenly flex-wrap py-10 px-2 sm:px-5 md:px-10 `}>
           <div className={` w-full md:w-1/2 lg:w-1/3 flex justify-center`}>
-            <LoadedImage
-              src={'photo-1686668108582-5c7074494753'}
+            <Image
+              src={pslAbout}
               alt='placeholder image'
               width={400}
               height={200}
@@ -81,69 +86,69 @@ const Home = () => {
             <p className='text-psl-primary dark:text-psl-active-text py-4'>Parity works with an extensive collection of clients striving to provide assistance and knowledge to allow participants to use their plans effectively. The NDIS is about choice, and we work with our clients to ensure we are delivering client-centered and individualised supports to meet both their NDIS and personal goals.</p>
             <div className='border-b-2 border-solid border-psl-active-link my-7 w-1/5'></div>
           </div>
-          <div className='h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center'>
+          <div className='h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 justify-center'>
             <DynamicCard
               className={`bg-psl-secondary-text dark:bg-psl-primary-text`}
               onVisible='fadeFromBottom'>
               <CardHeader>
-                <LoadedImage
-                  src={'photo-1508847154043-be5407fcaa5a'}
+                <Image
+                  src={pslCommunity}
                   alt='placeholder image'
                   width={400}
                   height={200}
                 />
               </CardHeader>
               <CardBody className={`py-5`}>
-                <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold px-3 sm:px-6 pb-4'>COMMUNITY ACCESS</h4>
-                <p className='text-psl-primary dark:text-psl-active-text px-4 sm:px-8'>Parity Supported Living aims to assist people with disability to live a full life and be able to engage in the community. We support you in taking part in the community, whether that be signing up for an art class, going on a holiday, learning to play an instrument, or many other activities.</p>
+                <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold px-3 sm:px-4 pb-4'>COMMUNITY ACCESS</h4>
+                <p className='text-psl-primary dark:text-psl-active-text px-4 sm:px-5'>Parity Supported Living aims to assist people with disability to live a full life and be able to engage in the community. We support you in taking part in the community, whether that be signing up for an art class, going on a holiday, learning to play an instrument, or many other activities.</p>
               </CardBody>
             </DynamicCard>
             <DynamicCard
               className={`bg-psl-secondary-text dark:bg-psl-primary-text`}
               onVisible='fadeFromBottom'>
               <CardHeader>
-                <LoadedImage
-                  src={'photo-1508847154043-be5407fcaa5a'}
+                <Image
+                  src={pslSil}
                   alt='placeholder image'
                   width={400}
                   height={200}
                 />
               </CardHeader>
               <CardBody className={`py-5`}>
-                <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold px-3 sm:px-6 pb-4'>SUPPORTED INDEPENDENT LIVING</h4>
-                <p className='text-psl-primary dark:text-psl-active-text px-4 sm:px-8'>Our goal is to encourage you or your loved one to live as independently as possible. We focus on your strengths and achievements while offering the support you need in a variety of areas. Our team of passionate and experienced staff are dedicated to training and supporting you to live the best life you can, in the comfort and safety of your own home.</p>
+                <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold px-3 sm:px-4 pb-4'>SUPPORTED INDEPENDENT LIVING</h4>
+                <p className='text-psl-primary dark:text-psl-active-text px-4 sm:px-5'>Our goal is to encourage you or your loved one to live as independently as possible. We focus on your strengths and achievements while offering the support you need in a variety of areas. Our team of passionate and experienced staff are dedicated to training and supporting you to live the best life you can, in the comfort and safety of your own home.</p>
               </CardBody>
             </DynamicCard>
             <DynamicCard
               className={`bg-psl-secondary-text dark:bg-psl-primary-text`}
               onVisible='fadeFromBottom'>
               <CardHeader>
-                <LoadedImage
-                  src={'photo-1508847154043-be5407fcaa5a'}
+                <Image
+                  src={pslGroup}
                   alt='placeholder image'
                   width={400}
                   height={200}
                 />
               </CardHeader>
               <CardBody className={`py-5`}>
-                <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold px-3 sm:px-6 pb-4'>GROUP SUPPORTS</h4>
-                <p className='text-psl-primary dark:text-psl-active-text px-4 sm:px-8'>Group activities are one of the key elements of our support services. You will be supported to join in and be engaged in community, social or recreational activities that are meaningful to you. <br /> Whether it’s visiting your local bowling club, going to Hat Pac, or crossroad every week and other developmental daily living and activities.</p>
+                <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold px-3 sm:px-4 pb-4'>GROUP SUPPORTS</h4>
+                <p className='text-psl-primary dark:text-psl-active-text px-4 sm:px-5'>Group activities are one of the key elements of our support services. You will be supported to join in and be engaged in community, social or recreational activities that are meaningful to you. <br /> Whether it’s visiting your local bowling club, going to Hat Pac, or crossroad every week and other developmental daily living and activities.</p>
               </CardBody>
             </DynamicCard>
             <DynamicCard
               className={`bg-psl-secondary-text dark:bg-psl-primary-text`}
               onVisible='fadeFromBottom'>
               <CardHeader>
-                <LoadedImage
-                  src={'photo-1508847154043-be5407fcaa5a'}
+                <Image
+                  src={pslCoordination}
                   alt='placeholder image'
                   width={400}
                   height={200}
                 />
               </CardHeader>
               <CardBody className={`py-5`}>
-                <h5 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold px-3 sm:px-6 pb-4'>COORDINATION SERVICES</h5>
-                <p className='text-psl-primary dark:text-psl-active-text px-4 sm:px-8 '>Coordination service can assist you with the rollout and management of your NDIS plan by linking you with services when required and ensuring your funding is utilised correctly across all areas of your NDIS plan. <br /><br /> They will help you choose supporting services that suit your needs.</p>
+                <h5 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold px-3 sm:px-4 pb-4'>COORDINATION SERVICES</h5>
+                <p className='text-psl-primary dark:text-psl-active-text px-4 sm:px-5 '>Coordination service can assist you with the rollout and management of your NDIS plan by linking you with services when required and ensuring your funding is utilised correctly across all areas of your NDIS plan. <br /><br /> They will help you choose supporting services that suit your needs.</p>
               </CardBody>
             </DynamicCard>
           </div>
@@ -188,7 +193,7 @@ const Home = () => {
             className={`border-0 w-full`}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?q=place_id:EjM0LzExNiBNaXRjaGVsbCBBdmUsIEt1cnJpIEt1cnJpIE5TVyAyMzI3LCBBdXN0cmFsaWEiNxo1CjASLgoUChIJHY5OL9c3c2sR2azzyOOgXOcQdCoUChIJ1xqBvNE3c2sR5S1dZpdvNWcSATQ&key=AIzaSyBl_mcqBghSelYuOnhagHHx0OZoUTZ5XtU"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBl_mcqBghSelYuOnhagHHx0OZoUTZ5XtU&q=-32.80972626198365,151.47765816424086"
             title="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."
             aria-label="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."></iframe>
         </section>
