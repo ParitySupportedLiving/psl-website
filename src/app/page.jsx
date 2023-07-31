@@ -193,7 +193,7 @@ const Home = () => {
             className={`border-0 w-full`}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBl_mcqBghSelYuOnhagHHx0OZoUTZ5XtU&q=-32.80972626198365,151.47765816424086"
+            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=-32.80972626198365,151.47765816424086`}
             title="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."
             aria-label="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."></iframe>
         </section>
