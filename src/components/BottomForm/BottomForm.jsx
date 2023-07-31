@@ -29,8 +29,8 @@ const BottomForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='shadow-2xl p-2 sm:p-12'>
-      <h4 className='text-psl-primary text-2xl font-semibold  py-4'>Enquire Now</h4>
+    <form onSubmit={handleSubmit} className='shadow-2xl dark:shadow-psl-secondary-text/10 p-2 sm:p-12'>
+      <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold  py-4'>Enquire Now</h4>
       <div className='grid grid-cols-2'>
         <div className='px-1 mb-2 col-span-2 sm:col-span-1' >
           <label htmlFor='bottom-form-name' className='text-psl-primary font-semibold'>Full Name</label>
@@ -97,7 +97,7 @@ const BottomForm = () => {
           ></textarea>
         </div>
         <div className='col-span-2 flex items-center justify-center px-1'>
-          <Button className={`w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold`} type="submit">Submit</Button>
+          <Button className={`w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text`} type="submit">Submit</Button>
         </div>
       </div>
     </form>
