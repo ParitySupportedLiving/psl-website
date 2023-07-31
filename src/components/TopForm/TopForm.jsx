@@ -22,7 +22,7 @@ const TopForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("submit");
     console.log(formData);

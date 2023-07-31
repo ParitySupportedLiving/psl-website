@@ -31,7 +31,6 @@ const DynamicCard = dynamic(() => import('@component/Card/Card'), {
 
 const Home = () => {
 
-
   return (
     <div className={`min-h-screen flex flex-col justify-between items-center`} >
       <nav className={`bg-psl-secondary-text dark:bg-psl-secondary/80 sm:flex sm:items-center sm:justify-around w-full min-h-5 px-5 py-2`}>
@@ -188,6 +187,7 @@ const Home = () => {
           </div>
         </section>
         <section name="section5" className='w-full'>
+          cname.vercel-dns.com.
           <iframe
             height="450"
             className={`border-0 w-full`}
