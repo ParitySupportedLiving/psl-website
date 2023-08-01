@@ -16,15 +16,15 @@ import dynamic from 'next/dynamic';
 import LoadedImage from '@/components/LoadedImage/LoadedImage';
 import BottomForm from '@/components/BottomForm/BottomForm';
 
-const DynamicButton = dynamic(() => import('@component/Button/Button'), {
+const DynamicButton = dynamic(() => import('@/components/Button/Button'), {
   loading: () => <p>Loading...</p>,
 });
 
-const DynamicTopForm = dynamic(() => import('@component/TopForm/TopForm'), {
+const DynamicTopForm = dynamic(() => import('@/app/components/TopForm/TopForm'), {
   loading: () => <p>...Loading Form...</p>
 });
 
-const DynamicCard = dynamic(() => import('@component/Card/Card'), {
+const DynamicCard = dynamic(() => import('@/components/Card/Card'), {
   loading: () => <p>...Loading Card</p>
 });
 

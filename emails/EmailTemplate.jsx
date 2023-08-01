@@ -4,13 +4,14 @@ import { Text } from "@react-email/text";
 import { Section } from "@react-email/section";
 import { Container } from "@react-email/container";
 
-const EmailTemplate = () => {
+const EmailTemplate = ({ name, phoneNumber, message }) => {
   return (
     <Html>
       <Section style={main}>
         <Container style={container}>
-          <Text style={heading}>Hi there!</Text>
-          <Text style={paragraph}>Welcome to our app!</Text>
+          <Text style={paragraph}>Name: {name}</Text>
+          <Text style={paragraph}>Number: {phoneNumber}</Text>
+          <Text style={paragraph}>Message: {message}</Text>
         </Container>
       </Section>
     </Html>

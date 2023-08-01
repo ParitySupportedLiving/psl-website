@@ -1,4 +1,4 @@
-import { sendMail } from "@/lib/mailService";
+import { sendMail } from "@app/lib/mailService";
 
 const handler = async (req, res) => {
   try {
@@ -6,11 +6,11 @@ const handler = async (req, res) => {
     switch (method) {
       case "POST": {
         //Do some thing
-        await sendMail(
-          "TEST",
-          "dontkillme@bunnyfiedlabs.com",
-          "THI IS A TEST FOR MY MEDIUM USERS"
-        );
+        await sendMail({
+          subject: "TEST",
+          toEmail: process.env.SMTP_EMAIL || 'willem@paritysl.com',
+          otpText: "THI IS A TEST FOR MY MEDIUM USERS"
+        });
         res.status(200).send("Success");
         break;
       }
