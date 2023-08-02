@@ -16,7 +16,8 @@ const TopForm = () => {
   const [url, setUrl] = useState('');
 
   useEffect(() => {
-    setUrl(`${window.location?.protocol}//${window.location?.hostname}${window.location?.port}`);
+    const urlString = `${window.location?.protocol}//${window.location?.hostname}${process.env.NODE_ENV === 'development' && `:${window.location?.port}`}`;
+    setUrl(urlString);
   }, []);
 
   const handleInput = (e) => {
@@ -39,6 +40,7 @@ const TopForm = () => {
       .then(res => {
         setLoading(false);
         if (!res.ok) {
+          console.error(res);
           throw new Error(res);
         }
         if (error) {

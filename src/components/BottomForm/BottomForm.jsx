@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 
 const BottomForm = () => {
@@ -13,6 +13,12 @@ const BottomForm = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [url, setUrl] = useState('');
+
+  useEffect(() => {
+    const urlString = `${window.location?.protocol}//${window.location?.hostname}${process.env.NODE_ENV === 'development' && `:${window.location?.port}`}`;
+    setUrl(urlString);
+  }, []);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -27,13 +33,14 @@ const BottomForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await fetch('http://localhost:3000/api', {
+    await fetch(`${url}/api`, {
       method: "POST",
       body: JSON.stringify(formData)
     })
       .then(res => {
         setLoading(false);
         if (!res.ok) {
+          console.error(res);
           throw new Error(res);
         }
         if (error) {
