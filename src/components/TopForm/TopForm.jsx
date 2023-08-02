@@ -63,7 +63,6 @@ const TopForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {console.log(url)}
       <div className='grid grid-cols-2'>
         <div className='px-1 mb-2 col-span-2 sm:col-span-1' >
           <label htmlFor='top-form-name' className='hidden'>Name</label>

@@ -22,16 +22,17 @@ message: ${req.message}`,
     }))
   })
     .then(res => {
-      if (res.accepted) {
-        return new Response('Mail Sent', {
-          status: 200,
-          body: res.response
-        });
-      }
+      return res;
     })
     .catch(err => {
+      console.error(err);
       throw new Error(err);
     });
+
+  return new Response(`Mail Sent id: ${mail.messageId}`, {
+    status: 200,
+    body: mail.response
+  });
 
 }
 
