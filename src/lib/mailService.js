@@ -1,10 +1,10 @@
 // var nodemailer = require("nodemailer");
 import nodemailer from "nodemailer";
 //-----------------------------------------------------------------------------
-export async function sendMail({ subject, toEmail, otpText, html }) {
+export async function sendMail({ subject, fromEmail, otpText, html }) {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: process.env.SMTP_POST,
+    port: process.env.SMTP_PORT,
     secure: process.env.SMTP_SECURITY || false,
     auth: {
       user: process.env.SMTP_EMAIL,
@@ -13,8 +13,8 @@ export async function sendMail({ subject, toEmail, otpText, html }) {
   });
 
   var mailOptions = {
-    from: process.env.SMTP_FROM_EMAIL,
-    to: toEmail,
+    from: fromEmail,
+    to: process.env.SMTP_EMAIL,
     subject: subject,
     text: otpText,
     html: html

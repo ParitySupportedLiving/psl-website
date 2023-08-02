@@ -37,9 +37,10 @@ export async function GET(req) {
 
 export async function POST(request) {
   const req = await request.json();
+  console.log(req);
   const mail = await sendMail({
     subject: req.subject || "General Enquiry",
-    toEmail: process.env.SMTP_EMAIL || 'willem@paritysl.com',
+    fromEmail: req.email,
     otpText: `name: ${req.name}
 number: ${req.phoneNumber}
 message: ${req.message}`,

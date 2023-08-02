@@ -20,7 +20,7 @@ const DynamicButton = dynamic(() => import('@/components/Button/Button'), {
   loading: () => <p>Loading...</p>,
 });
 
-const DynamicTopForm = dynamic(() => import('@/app/components/TopForm/TopForm'), {
+const DynamicTopForm = dynamic(() => import('@/components/TopForm/TopForm'), {
   loading: () => <p>...Loading Form...</p>
 });
 
@@ -33,18 +33,18 @@ const Home = () => {
 
   return (
     <div className={`min-h-screen flex flex-col justify-between items-center`} >
-      <nav className={`bg-psl-secondary-text dark:bg-psl-secondary/80 sm:flex sm:items-center sm:justify-around w-full min-h-5 px-5 py-2`}>
+      <nav className={`bg-psl-secondary dark:bg-psl-secondary/80 sm:flex sm:items-center sm:justify-around w-full min-h-5 px-5 py-2`}>
         <div className={`flex items-center p-1 sm:p-0`}>
-          <span className="material-icons text-sm">
+          <span className="material-icons text-sm text-psl-active-text">
             call
           </span>
-          <p>0427 358 514</p>
+          <p className='text-psl-active-text'>0427 358 514</p >
         </div>
         <div className={`flex items-center p-1 sm:p-0`}>
-          <span className="material-icons text-sm">
+          <span className="material-icons text-sm text-psl-active-text">
             email
           </span>
-          <p>contact@paritysl.com</p>
+          <p className='text-psl-active-text'>contact@paritysl.com</p>
         </div>
       </nav>
       <main className='w-full flex flex-col items-center justify-around flex-1'>
@@ -187,7 +187,6 @@ const Home = () => {
           </div>
         </section>
         <section name="section5" className='w-full'>
-          cname.vercel-dns.com.
           <iframe
             height="450"
             className={`border-0 w-full`}
@@ -198,7 +197,7 @@ const Home = () => {
             aria-label="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."></iframe>
         </section>
       </main>
-      <footer className={`bg-psl-secondary-text dark:bg-psl-secondary/80 flex flex-col justify-around w-full p-4 sm:px-10`}>
+      <footer className={`bg-psl-secondary dark:bg-psl-secondary/80 flex flex-col justify-around w-full p-4 sm:px-10`}>
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 px-3 pt-3 pb-5`}>
           <div className={`col-span-1 w-full md:w-1/2 m-auto`}>
             <Image
@@ -206,34 +205,34 @@ const Home = () => {
               alt="parity supported living icon"
               className='max-h-36 w-auto p-2 mx-auto md:m-0'
             />
-            <p className={'py-2'}>At Parity Supported Living, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
+            <p className={'py-2 text-psl-active-text'}>At Parity Supported Living, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
           </div>
           <div className={`col-span-1 w-full md:w-1/2 m-auto`}>
-            <p className='font-semibold'>CONTACT DETAILS</p>
+            <p className='font-semibold text-psl-active-text'>CONTACT DETAILS</p>
             <ul>
               <li className={`flex p-2 items-center`}>
                 <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                   call
                 </span>
-                <p >0427 358 514</p>
+                <p className='text-psl-active-text'>0427 358 514</p>
               </li>
               <li className={`flex p-2 items-center`}>
                 <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                   email
                 </span>
-                <p >contact@paritysl.com</p>
+                <p className='text-psl-active-text'>contact@paritysl.com</p>
               </li>
               <li className={`flex p-2 items-center`}>
                 <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                   location_pin
                 </span>
-                <p >Unit 4/116 Mitchell Avenue,
+                <p className='text-psl-active-text'>Unit 4/116 Mitchell Avenue,
                   Kurri Kurri. NSW 2327</p>
               </li>
             </ul>
           </div>
         </div>
-        <div className={`text-xs`}>Copyright 2023 © Parity Supported Living | All Rights Reserved</div>
+        <div className={`text-xs text-psl-active-text`}>Copyright 2023 © Parity Supported Living | All Rights Reserved</div>
       </footer>
     </div >
   );
