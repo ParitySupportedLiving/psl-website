@@ -16,7 +16,7 @@ const TopForm = () => {
   const [url, setUrl] = useState('');
 
   useEffect(() => {
-    setUrl(`${window.location?.protocol} ${window.location?.hostname} ${window.location?.port}`);
+    setUrl(`${window.location?.protocol}//${window.location?.hostname}${window.location?.port}`);
   }, []);
 
   const handleInput = (e) => {
