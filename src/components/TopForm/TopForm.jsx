@@ -38,10 +38,10 @@ const TopForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch(`${url}/api`, {
+    await fetch(`${url}/api`, {
       method: "POST",
       body: JSON.stringify(formData)
     })
@@ -118,19 +118,12 @@ const TopForm = () => {
           ></input>
         </div>
         <div className='col-span-2 flex items-center justify-center px-1'>
-          {!error
-            ? <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={(e) => handleSubmit(e)}>{!loading
-              ? 'Submit'
-              : <span className="material-icons animate-spin">
-                loop
-              </span>
-            }</Button>
-            : <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-red-500 hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={(e) => handleSubmit(e)}>{!loading
-              ? 'Try Again'
-              : <span className="material-icons animate-spin">
-                loop
-              </span>
-            }</Button>}
+          <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out ${!error ? 'bg-psl-secondary' : 'bg-red-500'} hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={handleSubmit} type="button">{!loading
+            ? !error ? 'Submit' : 'Try Again'
+            : <span className="material-icons animate-spin">
+              loop
+            </span>
+          }</Button>
         </div>
       </div>
       <div className=' w-full flex flex-wrap justify-between p-2'>

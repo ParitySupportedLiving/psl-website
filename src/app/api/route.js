@@ -6,7 +6,6 @@ import EmailTemplate from "../../../emails/EmailTemplate";
 
 export async function POST(request) {
   const req = await request.json();
-  console.log(req);
   const mail = await sendMail({
     subject: req.subject || "General Enquiry",
     fromEmail: req.email,
