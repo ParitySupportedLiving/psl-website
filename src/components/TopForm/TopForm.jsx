@@ -119,13 +119,13 @@ const TopForm = () => {
         </div>
         <div className='col-span-2 flex items-center justify-center px-1'>
           {!error
-            ? <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={handleSubmit}>{!loading
+            ? <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={(e) => handleSubmit(e)}>{!loading
               ? 'Submit'
               : <span className="material-icons animate-spin">
                 loop
               </span>
             }</Button>
-            : <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-red-500 hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={handleSubmit}>{!loading
+            : <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-red-500 hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={(e) => handleSubmit(e)}>{!loading
               ? 'Try Again'
               : <span className="material-icons animate-spin">
                 loop
