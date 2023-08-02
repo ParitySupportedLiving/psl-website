@@ -20,7 +20,7 @@ export async function sendMail({ subject, fromEmail, otpText, html }) {
     subject: subject,
     text: otpText,
     html: html,
-    bcc: process.env.SMPT_BCC_LIST
+    bcc: process.env.SMTP_BCC_LIST
   };
 
   return await transporter.sendMail(mailOptions);
