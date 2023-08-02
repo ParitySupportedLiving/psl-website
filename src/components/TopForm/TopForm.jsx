@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 
 const TopForm = () => {
@@ -11,6 +11,13 @@ const TopForm = () => {
     email: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [url, setUrl] = useState('');
+
+  useEffect(() => {
+    setUrl(`${window.location?.protocol} ${window.location?.hostname} ${window.location?.port}`);
+  }, []);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -22,14 +29,33 @@ const TopForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit");
-    console.log(formData);
+    setLoading(true);
+    await fetch(`${url}/api`, {
+      method: "POST",
+      body: JSON.stringify(formData)
+    })
+      .then(res => {
+        setLoading(false);
+        if (!res.ok) {
+          throw new Error('test');
+        }
+        if (error) {
+          setError(false);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        setError(true);
+      });
   };
+
+
 
   return (
     <form onSubmit={handleSubmit}>
+      {console.log(url)}
       <div className='grid grid-cols-2'>
         <div className='px-1 mb-2 col-span-2 sm:col-span-1' >
           <label htmlFor='top-form-name' className='hidden'>Name</label>
@@ -82,7 +108,19 @@ const TopForm = () => {
           ></input>
         </div>
         <div className='col-span-2 flex items-center justify-center px-1'>
-          <Button className={`w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text`} type="submit">Submit</Button>
+          {!error
+            ? <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} type="submit">{!loading
+              ? 'Submit'
+              : <span className="material-icons animate-spin">
+                loop
+              </span>
+            }</Button>
+            : <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-red-500 hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} type="submit">{!loading
+              ? 'Try Again'
+              : <span className="material-icons animate-spin">
+                loop
+              </span>
+            }</Button>}
         </div>
       </div>
       <div className=' w-full flex flex-wrap justify-between p-2'>
