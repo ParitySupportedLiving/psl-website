@@ -65,7 +65,7 @@ const TopForm = () => {
 
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form>
       <div className='grid grid-cols-2'>
         <div className='px-1 mb-2 col-span-2 sm:col-span-1' >
           <label htmlFor='top-form-name' className='hidden'>Name</label>
@@ -119,13 +119,13 @@ const TopForm = () => {
         </div>
         <div className='col-span-2 flex items-center justify-center px-1'>
           {!error
-            ? <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} type="submit">{!loading
+            ? <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={handleSubmit}>{!loading
               ? 'Submit'
               : <span className="material-icons animate-spin">
                 loop
               </span>
             }</Button>
-            : <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-red-500 hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} type="submit">{!loading
+            : <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-red-500 hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={handleSubmit}>{!loading
               ? 'Try Again'
               : <span className="material-icons animate-spin">
                 loop
