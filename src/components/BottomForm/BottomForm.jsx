@@ -19,7 +19,11 @@ const BottomForm = () => {
     const urlString = `${window.location?.protocol}//${window.location?.hostname}`;
     let port;
     if (process.env.NODE_ENV === 'development') port = `:${window.location?.port}`;
-    setUrl(urlString + port);
+    setUrl(() => {
+      if (port) {
+        return urlString + port;
+      } else return urlString;
+    });
   }, []);
 
   const handleInput = (e) => {
