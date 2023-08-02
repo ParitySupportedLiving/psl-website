@@ -38,10 +38,10 @@ const TopForm = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    await fetch(`${url}/api`, {
+    fetch(`${url}/api`, {
       method: "POST",
       body: JSON.stringify(formData)
     })
