@@ -5,12 +5,14 @@ import Button from '../Button/Button';
 
 const TopForm = () => {
 
-  const [formData, setFormData] = useState({
+  const initialFormState = {
     name: '',
     phoneNumber: '',
     email: '',
     message: ''
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [url, setUrl] = useState('');
@@ -49,6 +51,7 @@ const TopForm = () => {
           console.error(res);
           throw new Error(res);
         }
+        setFormData(initialFormState);
         if (error) {
           setError(false);
         }

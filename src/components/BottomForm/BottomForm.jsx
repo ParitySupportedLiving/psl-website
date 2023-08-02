@@ -4,13 +4,16 @@ import React, { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 
 const BottomForm = () => {
-  const [formData, setFormData] = useState({
+
+  const initialFormState = {
     name: '',
     phoneNumber: '',
     email: '',
     subject: '',
     message: ''
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [url, setUrl] = useState('');
@@ -49,6 +52,7 @@ const BottomForm = () => {
           console.error(res);
           throw new Error(res);
         }
+        setFormData(initialFormState);
         if (error) {
           setError(false);
         }
