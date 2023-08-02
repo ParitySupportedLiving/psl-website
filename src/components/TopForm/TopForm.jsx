@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 
 const TopForm = () => {
@@ -13,6 +13,11 @@ const TopForm = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [url, setUrl] = useState('');
+
+  useEffect(() => {
+    setUrl(`${window.location?.protocol} ${window.location?.hostname} ${window.location?.port}`);
+  }, []);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -27,7 +32,7 @@ const TopForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await fetch('http://localhost:3000/api', {
+    await fetch(`${url}/api`, {
       method: "POST",
       body: JSON.stringify(formData)
     })
@@ -46,8 +51,11 @@ const TopForm = () => {
       });
   };
 
+
+
   return (
     <form onSubmit={handleSubmit}>
+      {console.log(url)}
       <div className='grid grid-cols-2'>
         <div className='px-1 mb-2 col-span-2 sm:col-span-1' >
           <label htmlFor='top-form-name' className='hidden'>Name</label>

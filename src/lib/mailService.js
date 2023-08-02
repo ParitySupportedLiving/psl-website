@@ -5,11 +5,13 @@ export async function sendMail({ subject, fromEmail, otpText, html }) {
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
-    secure: process.env.SMTP_SECURITY || false,
     auth: {
       user: process.env.SMTP_EMAIL,
       pass: process.env.SMTP_PASSWORD,
     },
+    tls: {
+      ciphers: 'SSLv3'
+    }
   });
 
   var mailOptions = {

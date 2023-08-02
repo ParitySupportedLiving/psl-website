@@ -43,10 +43,12 @@ export async function POST(request) {
     fromEmail: req.email,
     otpText: `name: ${req.name}
 number: ${req.phoneNumber}
+email: ${req.email}
 message: ${req.message}`,
     html: render(EmailTemplate({
       name: req.name,
       phoneNumber: req.phoneNumber,
+      email: req.email,
       message: req.message
     }))
   })

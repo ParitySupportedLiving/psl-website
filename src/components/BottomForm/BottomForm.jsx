@@ -34,7 +34,7 @@ const BottomForm = () => {
       .then(res => {
         setLoading(false);
         if (!res.ok) {
-          throw new Error('test');
+          throw new Error(res);
         }
         if (error) {
           setError(false);
