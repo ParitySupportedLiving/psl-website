@@ -4,37 +4,6 @@ import { sendMail } from "@/lib/mailService.js";
 import EmailTemplate from "../../../emails/EmailTemplate";
 
 
-export async function GET(req) {
-  const mail = await sendMail({
-    subject: "TEST4",
-    toEmail: process.env.SMTP_EMAIL || 'willem@paritysl.com',
-    otpText: "THI IS A TEST TO CHECK FOR HTML RENDER",
-    html: render(EmailTemplate())
-  })
-    .then(res => {
-      if (res.accepted) {
-        return res;
-      }
-    })
-    .catch(err => {
-      throw new Error(err);
-    });
-
-  return new Response('testing', {
-    status: 200,
-    mail: mail.response
-  });
-
-
-  // return NextResponse.json({ message: 'Success', mail: mail });
-  // return new Response('testing', {
-  //   status: 200,
-  // });
-  // return res.status(200).json([
-  //   { test: 'test' }
-  // ]);
-}
-
 export async function POST(request) {
   const req = await request.json();
   console.log(req);
@@ -54,18 +23,16 @@ message: ${req.message}`,
   })
     .then(res => {
       if (res.accepted) {
-        return res;
+        return new Response('Mail Sent', {
+          status: 200,
+          body: res.response
+        });
       }
     })
     .catch(err => {
       throw new Error(err);
     });
 
-
-  return new Response('Mail Sent', {
-    status: 200,
-    body: mail.response
-  });
 }
 
 export async function OPTIONS(req, res) {
