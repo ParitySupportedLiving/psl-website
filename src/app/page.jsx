@@ -38,7 +38,7 @@ const Home = () => {
               <p className='text-psl-active-text'>0427 358 514</p >
             </div>
           </a>
-          <a href={`mailto:${process.env.SMTP_EMAIL}?bcc=${process.env.SMTP_BCC_LIST}`} target="_blank">
+          <a href={`mailto:${process.env.SMTP_EMAIL}?&bcc=${process.env.SMTP_BCC_LIST}`} target="_blank">
             <div className={`flex items-center p-1 sm:p-0`}>
               <span className="material-icons text-sm text-psl-active-text">
                 email
@@ -176,7 +176,7 @@ const Home = () => {
                       <p className='text-psl-primary dark:text-psl-active-text'>0427 358 514</p>
                     </li>
                   </a>
-                  <a href={`mailto:${process.env.SMTP_EMAIL}?bcc=${process.env.SMTP_BCC_LIST}`}>
+                  <a href={`mailto:${process.env.SMTP_EMAIL}?&bcc=${process.env.SMTP_BCC_LIST}`}>
                     <li className={`flex p-2 items-center`}>
                       <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                         email
@@ -232,7 +232,7 @@ const Home = () => {
                     <p className='text-psl-active-text'>0427 358 514</p>
                   </li>
                 </a>
-                <a href={`mailto:${process.env.SMTP_EMAIL}?bcc=${process.env.SMTP_BCC_LIST}`}>
+                <a href={`mailto:${process.env.SMTP_EMAIL}?&bcc=${process.env.SMTP_BCC_LIST}`}>
                   <li className={`flex p-2 items-center`}>
                     <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                       email
