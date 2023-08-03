@@ -1,20 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import PSLImage from '@public/ParitySupportedLiving.png';
 import pslAbout from '@public/psl-about-us.jpg';
 import pslCommunity from '@public/psl-community.jpg';
 import pslCoordination from '@public/psl-coordination.jpg';
 import pslGroup from '@public/psl-group.jpg';
 import pslSil from '@public/psl-sil.jpg';
-// import Button from '@component/Button/Button';
-// import TopForm from '@/components/TopForm/TopForm';
-// import Card from '@/components/Card/Card';
 import CardHeader from '@/components/CardHeader/CardHeader';
 import CardBody from '@/components/CardBody/CardBody';
 import dynamic from 'next/dynamic';
-import LoadedImage from '@/components/LoadedImage/LoadedImage';
 import BottomForm from '@/components/BottomForm/BottomForm';
-import Script from 'next/script';
+import Banner from '@app/@banner/page';
 
 const DynamicButton = dynamic(() => import('@/components/Button/Button'), {
   loading: () => <p>Loading...</p>,
@@ -22,10 +17,6 @@ const DynamicButton = dynamic(() => import('@/components/Button/Button'), {
 
 const DynamicCard = dynamic(() => import('@/components/Card/Card'), {
   loading: () => <p>...Loading Card</p>
-});
-
-const DynamicTopForm = dynamic(() => import('@/components/TopForm/TopForm'), {
-  loading: () => <p>Loading...</p>,
 });
 
 const Home = () => {
@@ -55,30 +46,21 @@ const Home = () => {
       <main className='w-full flex flex-col items-center justify-around flex-1'>
         <section name="section1" className='w-full section1'>
           <div className='bg-psl-primary/60 w-full py-20 px-2 sm:px-5 md:px-10'>
-            <div className='w-full max-w-7xl mx-auto flex items-center justify-around flex-wrap'>
-              <div name="intro-message" className='max-w-lg md:w-1/2 xl:w-1/3 rightToLeft'>
-                <h1 className='text-5xl text-psl-active-link py-5 font-bold'>Parity Supported Living</h1>
-                <p className='text-2xl border-l-4 border-solid border-l-psl-active-link pl-5 text-psl-active-text'>At Parity, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
-              </div>
-              <div name="quick-access-form" className={`max-w-lg md:w-1/2 xl:w-1/3 p-2 flex flex-col items-center leftToRight`}>
-                <h2 className='text-4xl text-psl-active-link py-4 font-semibold'>Enquire Now</h2>
-                <DynamicTopForm email={process.env.SMTP_EMAIL} bcc={process.env.SMTP_BCC_LIST} />
-              </div>
-            </div>
+            <Banner email={process.env.SMTP_EMAIL} bcc={process.env.SMTP_BCC_LIST} onVisible={['inFromRight', 'inFromLeft']} />
           </div>
         </section>
         <section name="section2" className={`w-full bg-psl-active-text dark:bg-psl-primary py-10 px-2 sm:px-5 md:px-10 `}>
           <div className={`w-full max-w-7xl flex items-center justify-around flex-wrap mx-auto`}>
-            <div className={` w-full md:w-1/2 lg:w-1/3 flex justify-center`}>
+            <div className={` w-full md:w-1/2 lg:w-1/3 xl:w-1/2 md:px-2 flex justify-center`}>
               <Image
                 src={pslAbout}
                 alt='placeholder image'
                 width={400}
                 height={200}
-                className={`w-auto max-h-[500px] rounded-lg`}
+                className={`w-auto rounded-lg`}
               />
             </div>
-            <div className={`w-full md:w-1/2 lg:w-1/3 pt-5 md:pt-0`}>
+            <div className={`w-full md:w-1/2 lg:w-1/3 xl:w-1/2 md:px-2 pt-5 md:pt-0`}>
               <h6 className=' text-psl-secondary dark:text-psl-secondary-text font-bold pb-2 text-lg'>About</h6>
               <h2 className='text-4xl text-psl-primary dark:text-psl-active-text font-semibold'>Parity Supported Living</h2>
               <div className='border-b-2 border-solid border-psl-active-link my-3 w-1/5'></div>
@@ -172,22 +154,22 @@ const Home = () => {
               <div>
                 <h6 className=' text-psl-primary dark:text-psl-active-text font-bold p-2 text-lg'>CONTACT INFO</h6>
                 <ul>
-                  <a href="tel:0427358514">
-                    <li className={`flex p-2 items-center`}>
+                  <li className={`p-2`}>
+                    <a href="tel:0427358514" className='flex items-center'>
                       <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                         call
                       </span>
                       <p className='text-psl-primary dark:text-psl-active-text'>0427 358 514</p>
-                    </li>
-                  </a>
-                  <a href={`mailto:${process.env.SMTP_EMAIL}?&bcc=${process.env.SMTP_BCC_LIST}`}>
-                    <li className={`flex p-2 items-center`}>
+                    </a>
+                  </li>
+                  <li className={`p-2`}>
+                    <a href={`mailto:${process.env.SMTP_EMAIL}?&bcc=${process.env.SMTP_BCC_LIST}`} className='flex items-center'>
                       <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                         email
                       </span>
                       <p className='text-psl-primary dark:text-psl-active-text'>contact@paritysl.com</p>
-                    </li>
-                  </a>
+                    </a>
+                  </li>
                   <li className={`flex p-2 items-center`}>
                     <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                       location_pin
@@ -214,50 +196,6 @@ const Home = () => {
             aria-label="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."></iframe>
         </section>
       </main>
-      <Script src="https://cdn.userway.org/widget.js" data-account="XGs7Sc1hD0"></Script>
-      <footer className={`bg-psl-secondary dark:bg-psl-secondary/80 flex flex-col justify-around w-full p-4 sm:px-10`}>
-        <div className={`w-full max-w-7xl mx-auto flex flex-wrap`}>
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 px-3 pt-3 pb-5`}>
-            <div className={`col-span-1 w-full lg:w-1/2 m-auto`}>
-              <Image
-                src={PSLImage}
-                alt="parity supported living icon"
-                className='max-h-36 w-auto p-2 mx-auto md:m-0'
-              />
-              <p className={'py-2 text-psl-active-text'}>At Parity Supported Living, we believe both participants and support workers should work together toward an inclusive and fulfilling life.</p>
-            </div>
-            <div className={`col-span-1 w-full lg:w-1/2 m-auto`}>
-              <p className='font-semibold text-psl-active-text'>CONTACT DETAILS</p>
-              <ul>
-                <a href="tel:0427358514">
-                  <li className={`flex p-2 items-center`}>
-                    <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-                      call
-                    </span>
-                    <p className='text-psl-active-text'>0427 358 514</p>
-                  </li>
-                </a>
-                <a href={`mailto:${process.env.SMTP_EMAIL}?&bcc=${process.env.SMTP_BCC_LIST}`}>
-                  <li className={`flex p-2 items-center`}>
-                    <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-                      email
-                    </span>
-                    <p className='text-psl-active-text'>contact@paritysl.com</p>
-                  </li>
-                </a>
-                <li className={`flex p-2 items-center`}>
-                  <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-                    location_pin
-                  </span>
-                  <p className='text-psl-active-text'>Unit 4/116 Mitchell Avenue,
-                    Kurri Kurri. NSW 2327</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className={`text-xs text-psl-active-text`}>Copyright 2023 © Parity Supported Living | All Rights Reserved</div>
-        </div>
-      </footer>
     </div >
   );
 };

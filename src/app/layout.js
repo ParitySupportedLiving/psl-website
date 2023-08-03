@@ -1,5 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
+import Footer from './@footer/page';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,6 +19,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} `}>
         {children}
+        <Footer />
+        <Script
+          src="https://cdn.userway.org/widget.js"
+          data-account="XGs7Sc1hD0" />
       </body>
     </html>
   );
