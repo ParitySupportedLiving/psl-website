@@ -14,6 +14,7 @@ import CardBody from '@/components/CardBody/CardBody';
 import dynamic from 'next/dynamic';
 import LoadedImage from '@/components/LoadedImage/LoadedImage';
 import BottomForm from '@/components/BottomForm/BottomForm';
+import Script from 'next/script';
 
 const DynamicButton = dynamic(() => import('@/components/Button/Button'), {
   loading: () => <p>Loading...</p>,
@@ -61,7 +62,7 @@ const Home = () => {
               </div>
               <div name="quick-access-form" className={`max-w-lg md:w-1/2 xl:w-1/3 p-2 flex flex-col items-center leftToRight`}>
                 <h2 className='text-4xl text-psl-active-link py-4 font-semibold'>Enquire Now</h2>
-                <DynamicTopForm />
+                <DynamicTopForm email={process.env.SMTP_EMAIL} bcc={process.env.SMTP_BCC_LIST} />
               </div>
             </div>
           </div>
@@ -213,6 +214,7 @@ const Home = () => {
             aria-label="Unit 4/116 Mitchell Avenue, Kurri Kurri. 2327, NSW."></iframe>
         </section>
       </main>
+      <Script src="https://cdn.userway.org/widget.js" data-account="XGs7Sc1hD0"></Script>
       <footer className={`bg-psl-secondary dark:bg-psl-secondary/80 flex flex-col justify-around w-full p-4 sm:px-10`}>
         <div className={`w-full max-w-7xl mx-auto flex flex-wrap`}>
           <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 px-3 pt-3 pb-5`}>

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 
-const TopForm = () => {
+const TopForm = ({ email, bcc }) => {
 
   const initialFormState = {
     name: '',
@@ -127,7 +127,7 @@ const TopForm = () => {
         </div>
       </div>
       <div className=' w-full flex flex-wrap justify-between p-2'>
-        <a href={`mailto:${process.env.SMTP_EMAIL}?&bcc=${process.env.SMTP_BCC_LIST}`}>
+        <a href={`mailto:${email}?&bcc=${bcc}`}>
           <div className='flex items-center pb-2 '>
             <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
               email
