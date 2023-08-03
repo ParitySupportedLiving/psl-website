@@ -7,7 +7,7 @@ import pslCoordination from '@public/psl-coordination.jpg';
 import pslGroup from '@public/psl-group.jpg';
 import pslSil from '@public/psl-sil.jpg';
 // import Button from '@component/Button/Button';
-import TopForm from '@/components/TopForm/TopForm';
+// import TopForm from '@/components/TopForm/TopForm';
 // import Card from '@/components/Card/Card';
 import CardHeader from '@/components/CardHeader/CardHeader';
 import CardBody from '@/components/CardBody/CardBody';
@@ -23,6 +23,9 @@ const DynamicCard = dynamic(() => import('@/components/Card/Card'), {
   loading: () => <p>...Loading Card</p>
 });
 
+const DynamicTopForm = dynamic(() => import('@/components/TopForm/TopForm'), {
+  loading: () => <p>Loading...</p>,
+});
 
 const Home = () => {
 
@@ -58,7 +61,7 @@ const Home = () => {
               </div>
               <div name="quick-access-form" className={`max-w-lg md:w-1/2 xl:w-1/3 p-2 flex flex-col items-center leftToRight`}>
                 <h2 className='text-4xl text-psl-active-link py-4 font-semibold'>Enquire Now</h2>
-                <TopForm />
+                <DynamicTopForm />
               </div>
             </div>
           </div>
