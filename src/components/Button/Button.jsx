@@ -26,7 +26,7 @@ const Button = ({ className, type, children, ...props }) => {
 
 
   return (
-    <button id="button" className={className} type={type} data-inviewport={props?.onVisible}>{children}</button>
+    <button id="button" className={className} type={type} data-inviewport={props?.onVisible} onClick={props?.onClick}>{children}</button>
   );
 };
 

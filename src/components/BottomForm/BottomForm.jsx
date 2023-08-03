@@ -1,18 +1,33 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 
 const BottomForm = () => {
-  const [formData, setFormData] = useState({
+
+  const initialFormState = {
     name: '',
     phoneNumber: '',
     email: '',
     subject: '',
     message: ''
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [url, setUrl] = useState('');
+
+  useEffect(() => {
+    const urlString = `${window.location?.protocol}//${window.location?.hostname}`;
+    let port;
+    if (process.env.NODE_ENV === 'development') port = `:${window.location?.port}`;
+    setUrl(() => {
+      if (port) {
+        return urlString + port;
+      } else return urlString;
+    });
+  }, []);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -27,15 +42,17 @@ const BottomForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await fetch('http://localhost:3000/api', {
+    await fetch(`${url}/api`, {
       method: "POST",
       body: JSON.stringify(formData)
     })
       .then(res => {
         setLoading(false);
         if (!res.ok) {
+          console.error(res);
           throw new Error(res);
         }
+        setFormData(initialFormState);
         if (error) {
           setError(false);
         }
@@ -47,7 +64,7 @@ const BottomForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='shadow-2xl dark:shadow-psl-secondary-text/10 p-2 sm:p-12'>
+    <form className='shadow-2xl dark:shadow-psl-secondary-text/20 p-2 sm:p-7 bg-psl-active-text dark:bg-psl-primary '>
       <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold  py-4'>Enquire Now</h4>
       <div className='grid grid-cols-2'>
         <div className='px-1 mb-2 col-span-2 sm:col-span-1' >
@@ -115,19 +132,12 @@ const BottomForm = () => {
           ></textarea>
         </div>
         <div className='col-span-2 flex items-center justify-center px-1'>
-          {!error
-            ? <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} type="submit">{!loading
-              ? 'Submit'
-              : <span className="material-icons animate-spin">
-                loop
-              </span>
-            }</Button>
-            : <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out bg-red-500 hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} type="submit">{!loading
-              ? 'Try Again'
-              : <span className="material-icons animate-spin">
-                loop
-              </span>
-            }</Button>}
+          <Button className={`flex w-full rounded-md px-5 py-4 transition ease-in-out ${!error ? 'bg-psl-secondary' : 'bg-red-500'} hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`} onClick={handleSubmit} type="button">{!loading
+            ? !error ? 'Submit' : 'Try Again'
+            : <span className="material-icons animate-spin">
+              loop
+            </span>
+          }</Button>
         </div>
       </div>
     </form>

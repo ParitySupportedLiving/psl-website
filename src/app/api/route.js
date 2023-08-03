@@ -6,7 +6,6 @@ import EmailTemplate from "../../../emails/EmailTemplate";
 
 export async function POST(request) {
   const req = await request.json();
-  console.log(req);
   const mail = await sendMail({
     subject: req.subject || "General Enquiry",
     fromEmail: req.email,
@@ -22,16 +21,17 @@ message: ${req.message}`,
     }))
   })
     .then(res => {
-      if (res.accepted) {
-        return new Response('Mail Sent', {
-          status: 200,
-          body: res.response
-        });
-      }
+      return res;
     })
     .catch(err => {
+      console.error(err);
       throw new Error(err);
     });
+
+  return new Response(`Mail Sent id: ${mail.messageId}`, {
+    status: 200,
+    body: mail.response
+  });
 
 }
 
