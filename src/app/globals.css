@@ -72,6 +72,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  overflow-x: hidden;
 }
 
 p {
@@ -102,6 +103,28 @@ img {
   opacity: 100%;
 }
 
+[data-inviewport="inFromRight"] {
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+[data-inviewport="inFromRight"].is-inViewport {
+  opacity: 100;
+  transform: translateX(0);
+}
+
+[data-inviewport="inFromLeft"] {
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+[data-inviewport="inFromLeft"].is-inViewport {
+  opacity: 100;
+  transform: translateX(0);
+}
+
 :focus:not(:focus-visible) {
   outline: none;
   box-shadow: 1px 1px 5px rgba(1, 1, 0, 0.7);
@@ -117,14 +140,6 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
-}
-
-.leftToRight {
-  animation: 1s ease-in-out 0s 1 leftToRight;
-}
-
-.rightToLeft {
-  animation: 1s ease-in-out 0s 1 rightToLeft;
 }
 
 .fadeFromBottom {
