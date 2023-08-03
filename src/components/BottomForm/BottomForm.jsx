@@ -64,7 +64,7 @@ const BottomForm = () => {
   };
 
   return (
-    <form className='shadow-2xl dark:shadow-psl-secondary-text/10 p-2 sm:p-12'>
+    <form className='shadow-2xl dark:shadow-psl-secondary-text/20 p-2 sm:p-7 bg-psl-active-text dark:bg-psl-primary '>
       <h4 className='text-psl-primary dark:text-psl-active-text text-2xl font-semibold  py-4'>Enquire Now</h4>
       <div className='grid grid-cols-2'>
         <div className='px-1 mb-2 col-span-2 sm:col-span-1' >
