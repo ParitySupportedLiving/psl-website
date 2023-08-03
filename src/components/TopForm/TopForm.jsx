@@ -127,24 +127,28 @@ const TopForm = () => {
         </div>
       </div>
       <div className=' w-full flex flex-wrap justify-between p-2'>
-        <div className='flex items-center pb-2 '>
-          <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-            email
-          </span>
-          <div>
-            <p className='text-psl-active-text'>Email Us</p>
-            <p className='text-psl-active-text'>contact@paritysl.com</p>
+        <a href={`mailto:${process.env.SMTP_EMAIL}`}>
+          <div className='flex items-center pb-2 '>
+            <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
+              email
+            </span>
+            <div>
+              <p className='text-psl-active-text'>Email Us</p>
+              <p className='text-psl-active-text'>contact@paritysl.com</p>
+            </div>
           </div>
-        </div>
-        <div className='flex items-center'>
-          <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-            call
-          </span>
-          <div>
-            <p className='text-psl-active-text'>Call Us</p>
-            <p className='text-psl-active-text'>0427 358 514</p>
+        </a>
+        <a href="tel:0427358514">
+          <div className='flex items-center'>
+            <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
+              call
+            </span>
+            <div>
+              <p className='text-psl-active-text'>Call Us</p>
+              <p className='text-psl-active-text'>0427 358 514</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </form>
   );

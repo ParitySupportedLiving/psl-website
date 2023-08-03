@@ -30,18 +30,22 @@ const Home = () => {
     <div className={`min-h-screen w-full flex flex-col justify-between items-center bg-psl-active-text dark:bg-psl-primary`} >
       <nav className={`bg-psl-secondary dark:bg-psl-secondary/80  w-full min-h-5 px-5 py-2`}>
         <div className={`w-full max-w-7xl mx-auto flex sm:items-center justify-between sm:justify-around flex-wrap`}>
-          <div className={`flex items-center p-1 sm:p-0`}>
-            <span className="material-icons text-sm text-psl-active-text">
-              call
-            </span>
-            <p className='text-psl-active-text'>0427 358 514</p >
-          </div>
-          <div className={`flex items-center p-1 sm:p-0`}>
-            <span className="material-icons text-sm text-psl-active-text">
-              email
-            </span>
-            <p className='text-psl-active-text'>contact@paritysl.com</p>
-          </div>
+          <a href="tel:0427358514">
+            <div className={`flex items-center p-1 sm:p-0`}>
+              <span className="material-icons text-sm text-psl-active-text">
+                call
+              </span>
+              <p className='text-psl-active-text'>0427 358 514</p >
+            </div>
+          </a>
+          <a href={`mailto:${process.env.SMTP_EMAIL}`} target="_blank">
+            <div className={`flex items-center p-1 sm:p-0`}>
+              <span className="material-icons text-sm text-psl-active-text">
+                email
+              </span>
+              <p className='text-psl-active-text'>contact@paritysl.com</p>
+            </div>
+          </a>
         </div>
       </nav>
       <main className='w-full flex flex-col items-center justify-around flex-1'>
@@ -164,18 +168,22 @@ const Home = () => {
               <div>
                 <h6 className=' text-psl-primary dark:text-psl-active-text font-bold p-2 text-lg'>CONTACT INFO</h6>
                 <ul>
-                  <li className={`flex p-2 items-center`}>
-                    <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-                      call
-                    </span>
-                    <p className='text-psl-primary dark:text-psl-active-text'>0427 358 514</p>
-                  </li>
-                  <li className={`flex p-2 items-center`}>
-                    <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-                      email
-                    </span>
-                    <p className='text-psl-primary dark:text-psl-active-text'>contact@paritysl.com</p>
-                  </li>
+                  <a href="tel:0427358514">
+                    <li className={`flex p-2 items-center`}>
+                      <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
+                        call
+                      </span>
+                      <p className='text-psl-primary dark:text-psl-active-text'>0427 358 514</p>
+                    </li>
+                  </a>
+                  <a href={`mailto:${process.env.SMTP_EMAIL}`}>
+                    <li className={`flex p-2 items-center`}>
+                      <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
+                        email
+                      </span>
+                      <p className='text-psl-primary dark:text-psl-active-text'>contact@paritysl.com</p>
+                    </li>
+                  </a>
                   <li className={`flex p-2 items-center`}>
                     <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                       location_pin
@@ -216,18 +224,22 @@ const Home = () => {
             <div className={`col-span-1 w-full lg:w-1/2 m-auto`}>
               <p className='font-semibold text-psl-active-text'>CONTACT DETAILS</p>
               <ul>
-                <li className={`flex p-2 items-center`}>
-                  <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-                    call
-                  </span>
-                  <p className='text-psl-active-text'>0427 358 514</p>
-                </li>
-                <li className={`flex p-2 items-center`}>
-                  <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
-                    email
-                  </span>
-                  <p className='text-psl-active-text'>contact@paritysl.com</p>
-                </li>
+                <a href="tel:0427358514">
+                  <li className={`flex p-2 items-center`}>
+                    <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
+                      call
+                    </span>
+                    <p className='text-psl-active-text'>0427 358 514</p>
+                  </li>
+                </a>
+                <a href={`mailto:${process.env.SMTP_EMAIL}`}>
+                  <li className={`flex p-2 items-center`}>
+                    <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
+                      email
+                    </span>
+                    <p className='text-psl-active-text'>contact@paritysl.com</p>
+                  </li>
+                </a>
                 <li className={`flex p-2 items-center`}>
                   <span className={`material-icons text-sm p-2 rounded-full bg-psl-active-link text-psl-active-text`}>
                     location_pin
