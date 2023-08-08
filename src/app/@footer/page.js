@@ -1,3 +1,4 @@
+import Button from '@/components/Button/Button';
 import PSLImage from '@public/ParitySupportedLiving.png';
 import Image from 'next/image';
 import React from 'react';
@@ -43,7 +44,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className={`text-xs text-psl-active-text`}>Copyright 2023 © Parity Supported Living | All Rights Reserved</div>
+        <div className='w-full flex justify-between items-center'>
+          <div className={`text-xs text-psl-active-text `}>Copyright 2023 © Parity Supported Living | All Rights Reserved</div>
+          <div className={`text-xs text-psl-active-text`}><a href="https://paritysl.herokuapp.com/"><Button className={`flex rounded-md p-2 m-1 transition ease-in-out bg-psl-secondary hover:bg-psl-active-link duration-500 font-bold text-psl-active-text items-center justify-center`}>Worker Login</Button></a></div>
+        </div>
       </div>
     </footer>
   );
